@@ -12,3 +12,6 @@ def SignUpView(request):
     else:
         form = CustomUserCreationForm()
         return render(request, "registration/signup.html", {"form":form})
+
+def AccountPageView(request):
+    return render(request, "Account/accountpage.html")
