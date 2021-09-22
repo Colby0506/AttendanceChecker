@@ -11,16 +11,33 @@
     <form method="post">
       {% csrf_token %}
       <div>
-        {{form.username.label}}
-        {{form.username}}
-      </div>
-      <div>
         {{form.first_name.label}}
         {{form.first_name}}
       </div>
       <div>
-        <button type="submit">Sign Up</button>
+        {{form.last_name.label}}
+        {{form.last_name}}
+      </div>
       <div>
+        {{form.username.label}}
+        {{form.username}}
+      </div>
+      <div>
+        {{form.email.label}}
+        {{form.email}}
+      </div>
+      <div>
+        <p>Are you a teacher (Answer no if Student): {{form.is_teacher}}</p>
+      </div>
+      <div>
+        {{form.password1.label}}
+        {{form.password1}}
+      </div>
+      <div>
+        {{form.password2.label}}
+        {{form.password2}}
+      </div>
+       <button type="submit">Sign Up</button>
     </form>
 </div>
 {% endblock %}

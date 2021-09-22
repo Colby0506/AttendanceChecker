@@ -4,15 +4,7 @@
 {% endblock %}
 {% block html %}
 <div class="box">
-    {% if user.is_authenticated %}
-    Hi {{ user.username }}!
-    <p><a href="http://127.0.0.1:8000/accounts/logout/">Log Out</a></p>
-    {% else %}
-    <p>You are not logged in</p>
-    <a href="http://127.0.0.1:8000/accounts/login/">Log In</a> |
-    <a href="http://127.0.0.1:8000/accounts/signup/">Sign Up</a>
-    {% endif %}
-</div>
+
 <div class="box">
 
 </div>
