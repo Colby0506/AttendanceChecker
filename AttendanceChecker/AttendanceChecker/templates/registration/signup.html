@@ -1,12 +1,22 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+
+{% endblock %}
 
 {% block html %}
 <div class="box">
     <h2>Sign Up</h2>
     <form method="post">
       {% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit">Sign Up</button>
+      <div>
+        {{form.username.label}}
+        {{form.username}}
+      </div>
+      <div>
+        <button type="submit">Sign Up</button>
+      <div>
     </form>
 </div>
 {% endblock %}
