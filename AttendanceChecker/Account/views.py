@@ -14,4 +14,8 @@ def SignUpView(request):
         return render(request, "registration/signup.html", {"form":form})
 
 def AccountPageView(request):
-    return render(request, "Account/accountpage.html")
+    currentUser = request.user
+    if currentUser.is_teacher == True:
+        return render(request, "Account/accountpageteacher.html")
+    else:
+        return render(request, "Account/accountpage.html")
