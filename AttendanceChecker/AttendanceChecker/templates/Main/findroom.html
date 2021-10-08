@@ -57,7 +57,7 @@
   
   .modal-header {
     padding: 2px 16px;
-    background-color: #5cb85c;
+    background-color: red;
     color: white;
   }
   
@@ -65,7 +65,7 @@
   
   .modal-footer {
     padding: 2px 16px;
-    background-color: #5cb85c;
+    background-color: red;
     color: white;
   }
 {% endblock %}
@@ -100,22 +100,17 @@
     </div>
 </div>
 <div id="myModal" class="modal">
-
-    <!-- Modal content -->
     <div class="modal-content">
       <div class="modal-header">
+        <h2>Login Required</h2>
         <span class="close">&times;</span>
-        <h2>Modal Header</h2>
       </div>
       <div class="modal-body">
-        <p>Some text in the Modal Body</p>
-        <p>Some other text...</p>
+        <p>Please Login or Create an account before using this service</p>
       </div>
       <div class="modal-footer">
-        <h3>Modal Footer</h3>
       </div>
     </div>
-  
   </div>
 {% if user.is_authenticated %}
 <script>

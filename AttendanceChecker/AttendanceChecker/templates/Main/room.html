@@ -1,6 +1,16 @@
 {% extends 'base.html' %}
 {% block css %}
-
+.sidebar{
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 8vw;
+    right: 0;
+    background-color: white;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
 {% endblock %}
 {% block html %}
 <div class="CustomBox">
@@ -22,13 +32,18 @@
                         <a class="button is-info" id="chat-message-submit">Submit</a>
                     </div>
                 </div>
-
                 <small class="has-text-grey-light">Your username: {{ username }}</small>
             </div>
         </div>
     </div>
 </div>
-
+<div class = "sidebar">
+    <ul class = "UserList">
+        {% for name in users %}
+        <li>{{ name }}</li>
+        {% endfor %}
+    </ul>
+</div>
 {{ room_name|json_script:"json-roomname" }}
 {{ username|json_script:"json-username" }}
 {% endblock %}
@@ -49,13 +64,12 @@ chatSocket.onmessage = function(e) {
     console.log('onmessage');
 
     const data = JSON.parse(e.data);
-
-    if (data.message) {
-        document.querySelector('#chat-messages').innerHTML += ('<b>' + data.username + '</b>: ' + data.message + '<br>');
+    console.log(data.data);
+    if (data.data.messageUser) {
+        document.querySelector('#chat-messages').innerHTML += ('<b>' + data.data.usernameUser + '</b>: ' + data.data.messageUser + '<br>');
     } else {
         alert('The message is empty!');
     }
-
     scrollToBottom();
 };
 
