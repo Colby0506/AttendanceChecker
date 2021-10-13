@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser, User
 from django.contrib.postgres.fields import ArrayField
+import random, string
 # Create your models here.
 class CustomUser(AbstractUser):    
     id = models.AutoField(primary_key=True)
@@ -11,6 +12,7 @@ class CustomUser(AbstractUser):
     lastActivity = models.IntegerField(null = True)
     friends = ArrayField(models.CharField(max_length = 255),null=True)
     username = models.CharField(max_length=255,unique=True)
+    friendCode= models.CharField(max_length=255,unique =True,null=True)
     def __str__(self):
         return self.username
 #class UserPreferences(models.Model):

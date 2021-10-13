@@ -108,6 +108,13 @@
             </div>
             <a class = "test" style="float: right;" href="http://127.0.0.1:8000" >Home</a>
             <a class = "test" style="float: right;" href="http://127.0.0.1:8000/roomfind/" >Button2</a>
+            {% if user.is_authenticated %}
+                {% if user.is_teacher %}
+                    <a class = "test" style="float: right;" href="http://127.0.0.1:8000/createClass/" >Create Class</a>
+                {% else %}
+                    <a class = "test" style="float: right;" href="http://127.0.0.1:8000/joinClass/" >Join Class</a>
+                {% endif %}
+            {% endif %}
         </div>
         
         {% block html %}

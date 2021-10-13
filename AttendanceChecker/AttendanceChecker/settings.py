@@ -89,8 +89,8 @@ CHANNEL_LAYERS = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'maindb',
-        'USER':'admin',
+        'NAME': 'maindatabase',
+        'USER':'myprojectuser',
         'PASSWORD':'password',
         'HOST':'localhost',
         'PORT':'',
@@ -143,3 +143,6 @@ AUTH_USER_MODEL = 'Account.CustomUser'
 CRISPY_TEMPLATE_PACK="bootstrap4"
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/' 
+
+#Get rid of AutoField Warning
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

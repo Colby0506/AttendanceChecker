@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block css %}
+
+{% endblock %}
+{% block html %}
+<div class="CustomBox">
+    <div class="column is-4 is-offset-4">
+        <div class="field">
+            <label>Class Name</label>
+            <div class="control">
+                <input class="input" type="text" placeholder="Room name" id="class-name-input">
+            </div>
+        </div>
+        <div class="field">
+            <div class="control">
+                <div><a class="button is-info" id="room-name-submit">Submit</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block script %}
+document.querySelector('#class-name-input').focus();
+
+document.querySelector('#room-name-submit').onclick = function(e) {
+    var className = document.querySelector('#class-name-input').value;
+    window.location.href = "http://127.0.0.1:8000/"+className+"/classTemp/";
+};
+{% endblock %}

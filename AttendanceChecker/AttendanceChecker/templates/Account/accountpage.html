@@ -1,10 +1,17 @@
 {% extends 'base.html' %}
-
 {% block css %}
-{% endblock %}
 
+{% endblock %}
 {% block html %}
-<div class= "box">
-    <p>Account Page STUDENT</p>
+<div class="CustomBox">
+    {% if user.is_teacher %}
+        <p>Work</p>
+    {% else %}
+        <p>Student</p>
+    {% endif %}
+
 </div>
+{% endblock %}
+{% block script %}
+
 {% endblock %}
